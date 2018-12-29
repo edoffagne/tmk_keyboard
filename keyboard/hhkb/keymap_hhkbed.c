@@ -32,23 +32,43 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * ,-----------------------------------------------------------.
      * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|Up |   |Backs|
+     * |Caps |   |Up |   |   |   |   |   |Psc|Slk|Pus|Up |   |Backs|
      * |-----------------------------------------------------------|
-     * |      |VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|Lef|Rig|Enter   |
+     * |      |Lef|Dow|Rig|   |   |  *|  /|Hom|PgU|Lef|Rig|Enter   |
      * |-----------------------------------------------------------|
      * |        |   |   |   |   |   |  +|  -|End|PgD|Dow|      |   |
      * `-----------------------------------------------------------'
-     *       |   |     |                       |     |   |
+     *       |   |     |          Fn8          |     |   |
      *       `-------------------------------------------'
      */
     KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \
-           CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS, UP, TRNS, BSPC,      \
-           TRNS,VOLD,VOLU,MUTE,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,PENT,            \
+           CAPS,TRNS,UP,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS, UP, TRNS, BSPC,      \
+           TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,PENT,            \
            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,TRNS,TRNS,            \
-                TRNS,TRNS,          TRNS,               TRNS,TRNS),
+                TRNS,TRNS,          Fn8,               TRNS,TRNS),
+
+  /* Layer 2: Mouse mode(IJKL)[Space]
+     * ,-----------------------------------------------------------.
+     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+     * |-----------------------------------------------------------|
+     * |Tab  |   |   |   |   |   |   |   |   |   |   |McU|   |     |
+     * |-----------------------------------------------------------|
+     * |Contro|   |   |   |   |   |   |   |   |   |McL|McR|Mb1     |
+     * |-----------------------------------------------------------|
+     * |Shift   |   |   |   |   |   |   |   |   |   |McD|Mb2  |    |
+     * `-----------------------------------------------------------'
+     *      |Gui |Alt  |          Fn8          |Fn   |Fn |
+     *      `--------------------------------------------'
+     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
+     */
+    
+  KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
+           NO, NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, MS_U,  NO,  NO, \
+           NO,VOLD,VOLU,MUTE,NO,  NO,  NO,  NO,  NO,  NO,  MS_L,  MS_R,  BTN1, \
+           NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  MS_D,BTN2,  NO, \
+                NO,  NO,          FN8,               TRNS,TRNS),
+
 };
-
-
 
 /*
  * Fn action definition
